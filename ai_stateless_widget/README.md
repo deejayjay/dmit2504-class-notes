@@ -1,0 +1,59 @@
+# Notes
+
+> In this app we create our own class called `MyApp`.
+> `runApp()` will instantiate this MyApp into a Widget object and run it.
+>
+> The `extends` keyword means that we are inheriting from the `StatelessWidget` class. **_Inheritance_** is a pillar of OOP.
+>
+> The `@override` keyword means that we are changing the base class' `build()` method to our own. This is an example of **_polymorphism_**. This is another pillar of OOP.
+>
+> This will **_return our produced MaterialApp Widget tree_**.
+
+## Sample Code
+
+```dart
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        backgroundColor: Colors.blueGrey,
+        appBar: AppBar(
+          title: const Text('Intro to Stateless Widget'),
+          backgroundColor: Colors.blueGrey[900],
+        ),
+        body: Center(
+          child: Text(
+            'Hey Man this is fun',
+            style: TextStyle(
+              fontSize: 40.0,
+              color: Colors.white,
+              backgroundColor: Colors.black,
+              decoration: TextDecoration.combine([
+                TextDecoration.underline,
+                TextDecoration.overline,
+              ]), // TextDecoration.combine
+            ), // TextStyle
+          ), // Text
+        ), // Center
+      ),// Scaffold
+    ); // MaterialApp
+  }
+}
+```
+
+## Important Links
+
+| Topic                                    | Link                                                                                        |
+| ---------------------------------------- | ------------------------------------------------------------------------------------------- |
+| Stateless Widget from Widgets 101 series | https://www.youtube.com/watch?v=wE7khGHVkYY                                                 |
+| Center Widget by RetroStudio             | https://www.youtube.com/watch?v=c726pWTtxqI&list=PLybADvIp2cxiVOEHi9ooCHP2tAAihHQPX&index=2 |
+| Text Widget with style by RetroStudio    | https://www.youtube.com/watch?v=96Gb-YHQdmY&list=PLybADvIp2cxiVOEHi9ooCHP2tAAihHQPX&index=9 |
+| Layouts in Flutter                       | https://flutter.dev/docs/development/ui/layout                                              |
